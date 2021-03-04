@@ -10,12 +10,14 @@ class HousesController < ApplicationController
   # GET /houses/1
   # GET /houses/1.json
   def show
+    @stations = @house.stations
+
   end
 
   # GET /houses/new
   def new
     @house = House.new
-    2.times { @house.stations.build }
+    @house.stations.build
   end
 
   # GET /houses/1/edit
@@ -71,6 +73,6 @@ class HousesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
       params.require(:house).permit(:name, :price, :adress, :age, :remarks,
-                                    station_attributes: [:route, :name, :distance])
+                                    stations_attributes: [:id, :route, :name, :distance, :house_id])
     end
 end

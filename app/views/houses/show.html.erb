@@ -26,11 +26,12 @@
   <%= @house.remarks %>
 </p>
 
-<% @stations.each　do |station| %>
+<% @stations.each do |station| %>
  <% if @house.stations.any? %>
-    <%= station.route %>
-    <%= station.name %>
-    <%= station.distance %>
+    <p>路線名：<%= station.route %></p>
+    <p>駅名：<%= station.name %></p>
+    <p>徒歩分数：<%= station.distance %></p>
+  <% end %>
  <% end %>
 
 <%= link_to 'Edit', edit_house_path(@house) %> |
