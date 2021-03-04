@@ -17,7 +17,7 @@ class HousesController < ApplicationController
   # GET /houses/new
   def new
     @house = House.new
-    @house.stations.build
+    2.times { @house.stations.build }
   end
 
   # GET /houses/1/edit
