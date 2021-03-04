@@ -15,6 +15,7 @@ class HousesController < ApplicationController
   # GET /houses/new
   def new
     @house = House.new
+    2.times { @house.stations.build }
   end
 
   # GET /houses/1/edit
@@ -69,6 +70,7 @@ class HousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
-      params.require(:house).permit(:name, :price, :adress, :age, :remarks)
+      params.require(:house).permit(:name, :price, :adress, :age, :remarks,
+                                    station_attributes: [:route, :name, :distance])
     end
 end
