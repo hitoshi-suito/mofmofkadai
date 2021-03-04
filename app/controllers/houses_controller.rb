@@ -22,6 +22,7 @@ class HousesController < ApplicationController
 
   # GET /houses/1/edit
   def edit
+    1.times { @house.stations.build}
   end
 
   # POST /houses

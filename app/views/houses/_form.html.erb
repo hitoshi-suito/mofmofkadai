@@ -36,6 +36,7 @@
     <%= form.text_area :remarks %>
   </div>
 
+<hr>
     <%= form.fields_for :stations do |station_form| %>
     <h3>最寄り駅<%= station_form.index + 1 %></h3>
       <div class="field">
