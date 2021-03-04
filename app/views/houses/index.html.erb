@@ -18,9 +18,9 @@
     <% @houses.each do |house| %>
       <tr>
         <td><%= house.name %></td>
-        <td><%= house.price %></td>
+        <td><%= house.price %>円</td>
         <td><%= house.adress %></td>
-        <td><%= house.age %></td>
+        <td><%= house.age %>年</td>
         <td><%= house.remarks %></td>
         <td><%= link_to '詳細', house %></td>
         <td><%= link_to '編集', edit_house_path(house) %></td>
